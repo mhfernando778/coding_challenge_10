@@ -23,20 +23,20 @@ console.log(prod1.getDetails()); // logging the updated stock after the purchase
 
 // Task 2 - Creating an Order Class
 
-class Order {
+class Order { // starting an new class for orders
     constructor(orderId, product, quantity) {
         this.orderId = orderId;
         this.product = product;
         this.quantity = quantity;
-        this.product.updateStock(quantity);
+        this.product.updateStock(quantity); // this is to update the stock count
     };
 
-    getOrderDetails() {
+    getOrderDetails() { // returning the details of any certain order
         return `Order ID: ${this.orderId}, Product Name: ${this.product}, Order Quantity: ${this.quantity}, Total Price: $${this.product.price * this.quantity}`
     };
 }
 
-const order1 = new Order(501, prod1, 2);
-console.log(order1.getOrderDetails()); 
+const order1 = new Order(501, prod1, 2); // creating a new instance
+console.log(order1.getOrderDetails());  // logging the details of the first order
 
-console.log(prod1.getDetails()); 
+console.log(prod1.getDetails()); // logging the details of the product
