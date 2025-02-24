@@ -58,14 +58,14 @@ class Inventory { // starting a class for inventory
         this.products.forEach(product => console.log(product.getDetails()));
     };
 
-    placeOrder(orderId, product, quantity) {
+    placeOrder(orderId, product, quantity) { // task 4 - added method for placing orders
         if (product.stock >= quantity) {
             const newOrder = new Order(orderId, product, quantity);
             this.orders.push(newOrder);
         };
     }
 
-    listOrders() {
+    listOrders() { // task 4 - added method to list new orders
         this.orders.forEach(order => console.log(order.getOrderDetails()))
     };
 };
@@ -77,6 +77,6 @@ inventory.listProducts();
 
 // Task 4 - Implementing Order Management //
 
-inventory.placeOrder(601, prod1, 2);
-inventory.listOrders();
-console.log(prod1.getDetails());
+inventory.placeOrder(601, prod1, 2); // creating new instance after adding new methods to the class
+inventory.listOrders(); // listing this instance
+console.log(prod1.getDetails()); // logging that list
