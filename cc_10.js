@@ -46,7 +46,8 @@ console.log(prod1.getDetails()); // logging the details of the product
 
 class Inventory { // starting a class for inventory
     constructor() {
-        this.products = []
+        this.products = [];
+        this.orders = []; // added for task 4
     };
 
     addProduct(product) { // adding a method to be able to add new products to the class
@@ -56,8 +57,26 @@ class Inventory { // starting a class for inventory
     listProducts() { // adding a method to list those products
         this.products.forEach(product => console.log(product.getDetails()));
     };
+
+    placeOrder(orderId, product, quantity) {
+        if (product.stock >= quantity) {
+            const newOrder = new Order(orderId, product, quantity);
+            this.orders.push(newOrder);
+        };
+    }
+
+    listOrders() {
+        this.orders.forEach(order => console.log(order.getOrderDetails()))
+    };
 };
 
 const inventory = new Inventory(); // creating an instance
 inventory.addProduct(prod1);
 inventory.listProducts();
+
+
+// Task 4 - Implementing Order Management //
+
+inventory.placeOrder(601, prod1, 2);
+inventory.listOrders();
+console.log(prod1.getDetails());
