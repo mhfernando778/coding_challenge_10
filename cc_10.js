@@ -69,7 +69,7 @@ class Inventory { // starting a class for inventory
         this.orders.forEach(order => console.log(order.getOrderDetails()))
     };
 
-    restockProduct(productId, quantity) {
+    restockProduct(productId, quantity) { // Task 5 - added new method to increase stock
         this.products.find(product => product.id === productId).stock += quantity;
     };
 };
@@ -88,5 +88,5 @@ console.log(prod1.getDetails()); // logging that list
 
 // Task 5 - Implementing Product Restocking //
 
-inventory.restockProduct(101, 5);
-console.log(prod1.getDetails()); 
+inventory.restockProduct(101, 5); // adding a new instance
+console.log(prod1.getDetails());  // logging the details
