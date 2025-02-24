@@ -68,6 +68,10 @@ class Inventory { // starting a class for inventory
     listOrders() { // task 4 - added method to list new orders
         this.orders.forEach(order => console.log(order.getOrderDetails()))
     };
+
+    restockProduct(productId, quantity) {
+        this.products.find(product => product.id === productId).stock += quantity;
+    };
 };
 
 const inventory = new Inventory(); // creating an instance
@@ -80,3 +84,9 @@ inventory.listProducts();
 inventory.placeOrder(601, prod1, 2); // creating new instance after adding new methods to the class
 inventory.listOrders(); // listing this instance
 console.log(prod1.getDetails()); // logging that list
+
+
+// Task 5 - Implementing Product Restocking //
+
+inventory.restockProduct(101, 5);
+console.log(prod1.getDetails()); 
